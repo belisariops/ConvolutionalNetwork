@@ -1,0 +1,14 @@
+//
+// Created by belisariops on 9/25/17.
+//
+
+#ifndef CONVOLUTIONALNETWORK_INPUTLAYER_H
+#define CONVOLUTIONALNETWORK_INPUTLAYER_H
+
+
+class InputLayer {
+
+};
+
+
+#endif //CONVOLUTIONALNETWORK_INPUTLAYER_H
