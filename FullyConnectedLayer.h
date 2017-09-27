@@ -7,9 +7,12 @@
 
 
 #include "NeuralLayer.h"
+#include "SigmoidNeuron.h"
 
 class FullyConnectedLayer : NeuralLayer {
 
+private:
+    std::vector<SigmoidNeuron> neurons;
 };
 
 

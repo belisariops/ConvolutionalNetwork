@@ -7,18 +7,25 @@
 
 
 #include <vector>
+#include "Neuron.h"
 
 class NeuralLayer {
 public:
-    void getPreviousLayer();
-    void getNextLayer();
-    void setPreviousLayer(NeuralLayer layer);
-    void setNextLayer(NeuralLayer layer);
-    void connect(NeuralLayer layer);
+    NeuralLayer *getPreviousLayer();
+    NeuralLayer *getNextLayer();
+    void setPreviousLayer(NeuralLayer *layer);
+    void setNextLayer(NeuralLayer *layer);
+    void connect(NeuralLayer *layer);
+    virtual void buildRandomLayer();
+    virtual double *getOutput(std::vector<double> input) = 0;
+    virtual void backPropagation() =  0;
+    virtual void forwardPropagation() = 0;
+
 protected:
     std::vector<double> getWeights();
-    NeuralLayer previousLayer;
-    NeuralLayer nextLayer;
+private:
+    NeuralLayer *previousLayer;
+    NeuralLayer *nextLayer;
     std::vector<double> weights;
 };
 

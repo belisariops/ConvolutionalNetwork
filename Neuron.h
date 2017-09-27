@@ -10,20 +10,17 @@
 
 class Neuron {
 public:
-    void setWeights(std::vector<double> weights);
+    Neuron(double delta, double bias, double learningRate);
     void setLearningRate(double learningRate);
     void setBias(double bias);
     void setDelta(double delta);
-    void setRandomWeights(int numberOfWeights,int minValue,int maxValue);
-    void updateWeights();
+    virtual void setRandomWeights(int numberOfWeights,int minValue,int maxValue)= 0;
+    virtual void updateWeights(std::vector<double> inputs) = 0;
     void updateBias();
-    virtual double getOutput(double input[]);
+    virtual double getOutput(double input[])= 0;
 
 
-
-private:
-    std::vector<double> inputs;
-    std::vector<double> weights;
+protected:
     double delta;
     double bias;
     double learningRate;

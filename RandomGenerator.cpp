@@ -18,6 +18,10 @@ int RandomGenerator::nextInt() {
     return seed[3] = (seed[3] ^ (seed[3] >> 19)) ^ (t ^ (t >> 8));
 }
 
+double RandomGenerator::randomBetween(int lowerBound,int upperBound) {
+    return (double)lowerBound + (double)(upperBound - lowerBound)*nextReal();
+}
+
 double RandomGenerator::nextReal() {
     return (double)nextInt() * coefficient;
 }

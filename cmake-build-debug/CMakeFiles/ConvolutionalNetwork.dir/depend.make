@@ -4,6 +4,7 @@
 CMakeFiles/ConvolutionalNetwork.dir/ConvolutionalLayer.cpp.o: ../ConvolutionalLayer.cpp
 CMakeFiles/ConvolutionalNetwork.dir/ConvolutionalLayer.cpp.o: ../ConvolutionalLayer.h
 CMakeFiles/ConvolutionalNetwork.dir/ConvolutionalLayer.cpp.o: ../NeuralLayer.h
+CMakeFiles/ConvolutionalNetwork.dir/ConvolutionalLayer.cpp.o: ../Neuron.h
 CMakeFiles/ConvolutionalNetwork.dir/ConvolutionalLayer.cpp.o: ../RandomGenerator.h
 
 CMakeFiles/ConvolutionalNetwork.dir/ConvolutionalNeuralNetwork.cpp.o: ../ConvolutionalNeuralNetwork.cpp
@@ -19,17 +20,23 @@ CMakeFiles/ConvolutionalNetwork.dir/Filter.cpp.o: ../Filter.h
 CMakeFiles/ConvolutionalNetwork.dir/FullyConnectedLayer.cpp.o: ../FullyConnectedLayer.cpp
 CMakeFiles/ConvolutionalNetwork.dir/FullyConnectedLayer.cpp.o: ../FullyConnectedLayer.h
 CMakeFiles/ConvolutionalNetwork.dir/FullyConnectedLayer.cpp.o: ../NeuralLayer.h
+CMakeFiles/ConvolutionalNetwork.dir/FullyConnectedLayer.cpp.o: ../Neuron.h
+CMakeFiles/ConvolutionalNetwork.dir/FullyConnectedLayer.cpp.o: ../SigmoidNeuron.h
 
 CMakeFiles/ConvolutionalNetwork.dir/InputLayer.cpp.o: ../InputLayer.cpp
 CMakeFiles/ConvolutionalNetwork.dir/InputLayer.cpp.o: ../InputLayer.h
+CMakeFiles/ConvolutionalNetwork.dir/InputLayer.cpp.o: ../NeuralLayer.h
+CMakeFiles/ConvolutionalNetwork.dir/InputLayer.cpp.o: ../Neuron.h
 
 CMakeFiles/ConvolutionalNetwork.dir/NeuralLayer.cpp.o: ../NeuralLayer.cpp
 CMakeFiles/ConvolutionalNetwork.dir/NeuralLayer.cpp.o: ../NeuralLayer.h
+CMakeFiles/ConvolutionalNetwork.dir/NeuralLayer.cpp.o: ../Neuron.h
 
 CMakeFiles/ConvolutionalNetwork.dir/Neuron.cpp.o: ../Neuron.cpp
 CMakeFiles/ConvolutionalNetwork.dir/Neuron.cpp.o: ../Neuron.h
 
 CMakeFiles/ConvolutionalNetwork.dir/PoolingLayer.cpp.o: ../NeuralLayer.h
+CMakeFiles/ConvolutionalNetwork.dir/PoolingLayer.cpp.o: ../Neuron.h
 CMakeFiles/ConvolutionalNetwork.dir/PoolingLayer.cpp.o: ../PoolingLayer.cpp
 CMakeFiles/ConvolutionalNetwork.dir/PoolingLayer.cpp.o: ../PoolingLayer.h
 
@@ -37,8 +44,14 @@ CMakeFiles/ConvolutionalNetwork.dir/RandomGenerator.cpp.o: ../RandomGenerator.cp
 CMakeFiles/ConvolutionalNetwork.dir/RandomGenerator.cpp.o: ../RandomGenerator.h
 
 CMakeFiles/ConvolutionalNetwork.dir/ReluLayer.cpp.o: ../NeuralLayer.h
+CMakeFiles/ConvolutionalNetwork.dir/ReluLayer.cpp.o: ../Neuron.h
 CMakeFiles/ConvolutionalNetwork.dir/ReluLayer.cpp.o: ../ReluLayer.cpp
 CMakeFiles/ConvolutionalNetwork.dir/ReluLayer.cpp.o: ../ReluLayer.h
+
+CMakeFiles/ConvolutionalNetwork.dir/SigmoidNeuron.cpp.o: ../Neuron.h
+CMakeFiles/ConvolutionalNetwork.dir/SigmoidNeuron.cpp.o: ../RandomGenerator.h
+CMakeFiles/ConvolutionalNetwork.dir/SigmoidNeuron.cpp.o: ../SigmoidNeuron.cpp
+CMakeFiles/ConvolutionalNetwork.dir/SigmoidNeuron.cpp.o: ../SigmoidNeuron.h
 
 CMakeFiles/ConvolutionalNetwork.dir/main.cpp.o: ../RandomGenerator.h
 CMakeFiles/ConvolutionalNetwork.dir/main.cpp.o: ../main.cpp

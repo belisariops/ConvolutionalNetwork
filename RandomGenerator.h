@@ -17,6 +17,7 @@ public:
 
     RandomGenerator(const unsigned int initial_seed);
     ~RandomGenerator();
+    double randomBetween(int lowerBound, int upperBound);
     int nextInt();
     double nextReal();
 

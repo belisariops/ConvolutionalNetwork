@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/clion/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/belisariops/JetBrains/clion-2017.2/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /opt/clion/bin/cmake/bin/cmake -E remove -f
+RM = /home/belisariops/JetBrains/clion-2017.2/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/belisariops/WorkSpace/C++/ConvolutionalNetwork
+CMAKE_SOURCE_DIR = /home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug
+CMAKE_BINARY_DIR = /home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-bu
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/opt/clion/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/belisariops/JetBrains/clion-2017.2/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/opt/clion/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/belisariops/JetBrains/clion-2017.2/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug/CMakeFiles /home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug/CMakeFiles /home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -420,6 +420,33 @@ ReluLayer.cpp.s:
 	$(MAKE) -f CMakeFiles/ConvolutionalNetwork.dir/build.make CMakeFiles/ConvolutionalNetwork.dir/ReluLayer.cpp.s
 .PHONY : ReluLayer.cpp.s
 
+SigmoidNeuron.o: SigmoidNeuron.cpp.o
+
+.PHONY : SigmoidNeuron.o
+
+# target to build an object file
+SigmoidNeuron.cpp.o:
+	$(MAKE) -f CMakeFiles/ConvolutionalNetwork.dir/build.make CMakeFiles/ConvolutionalNetwork.dir/SigmoidNeuron.cpp.o
+.PHONY : SigmoidNeuron.cpp.o
+
+SigmoidNeuron.i: SigmoidNeuron.cpp.i
+
+.PHONY : SigmoidNeuron.i
+
+# target to preprocess a source file
+SigmoidNeuron.cpp.i:
+	$(MAKE) -f CMakeFiles/ConvolutionalNetwork.dir/build.make CMakeFiles/ConvolutionalNetwork.dir/SigmoidNeuron.cpp.i
+.PHONY : SigmoidNeuron.cpp.i
+
+SigmoidNeuron.s: SigmoidNeuron.cpp.s
+
+.PHONY : SigmoidNeuron.s
+
+# target to generate assembly for a file
+SigmoidNeuron.cpp.s:
+	$(MAKE) -f CMakeFiles/ConvolutionalNetwork.dir/build.make CMakeFiles/ConvolutionalNetwork.dir/SigmoidNeuron.cpp.s
+.PHONY : SigmoidNeuron.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -489,6 +516,9 @@ help:
 	@echo "... ReluLayer.o"
 	@echo "... ReluLayer.i"
 	@echo "... ReluLayer.s"
+	@echo "... SigmoidNeuron.o"
+	@echo "... SigmoidNeuron.i"
+	@echo "... SigmoidNeuron.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
