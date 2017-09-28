@@ -6,12 +6,15 @@
 #define CONVOLUTIONALNETWORK_FILTER_H
 
 #include <vector>
+#include "Matrix.h"
 
-class Filter {
-    Filter();
-    std::vector<std::vector<double>> getValues();
+class Filter : public Matrix {
+public:
+    Filter(unsigned long width, unsigned long height);
+    ~Filter();
+
 private:
-    std::vector<std::vector<double>> tensor;
+    typedef Matrix super;
 };
 
 

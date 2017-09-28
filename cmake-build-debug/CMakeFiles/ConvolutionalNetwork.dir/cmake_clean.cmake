@@ -12,6 +12,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/ConvolutionalNetwork.dir/FullyConnectedLayer.cpp.o"
   "CMakeFiles/ConvolutionalNetwork.dir/ReluLayer.cpp.o"
   "CMakeFiles/ConvolutionalNetwork.dir/SigmoidNeuron.cpp.o"
+  "CMakeFiles/ConvolutionalNetwork.dir/FeatureMap.cpp.o"
+  "CMakeFiles/ConvolutionalNetwork.dir/Matrix.cpp.o"
   "ConvolutionalNetwork.pdb"
   "ConvolutionalNetwork"
 )

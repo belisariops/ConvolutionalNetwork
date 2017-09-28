@@ -14,8 +14,14 @@ CMakeFiles/ConvolutionalNetwork.dir/ConvolutionalNeuron.cpp.o: ../ConvolutionalN
 CMakeFiles/ConvolutionalNetwork.dir/ConvolutionalNeuron.cpp.o: ../ConvolutionalNeuron.h
 CMakeFiles/ConvolutionalNetwork.dir/ConvolutionalNeuron.cpp.o: ../Neuron.h
 
+CMakeFiles/ConvolutionalNetwork.dir/FeatureMap.cpp.o: ../FeatureMap.cpp
+CMakeFiles/ConvolutionalNetwork.dir/FeatureMap.cpp.o: ../FeatureMap.h
+CMakeFiles/ConvolutionalNetwork.dir/FeatureMap.cpp.o: ../Filter.h
+CMakeFiles/ConvolutionalNetwork.dir/FeatureMap.cpp.o: ../Matrix.h
+
 CMakeFiles/ConvolutionalNetwork.dir/Filter.cpp.o: ../Filter.cpp
 CMakeFiles/ConvolutionalNetwork.dir/Filter.cpp.o: ../Filter.h
+CMakeFiles/ConvolutionalNetwork.dir/Filter.cpp.o: ../Matrix.h
 
 CMakeFiles/ConvolutionalNetwork.dir/FullyConnectedLayer.cpp.o: ../FullyConnectedLayer.cpp
 CMakeFiles/ConvolutionalNetwork.dir/FullyConnectedLayer.cpp.o: ../FullyConnectedLayer.h
@@ -27,6 +33,9 @@ CMakeFiles/ConvolutionalNetwork.dir/InputLayer.cpp.o: ../InputLayer.cpp
 CMakeFiles/ConvolutionalNetwork.dir/InputLayer.cpp.o: ../InputLayer.h
 CMakeFiles/ConvolutionalNetwork.dir/InputLayer.cpp.o: ../NeuralLayer.h
 CMakeFiles/ConvolutionalNetwork.dir/InputLayer.cpp.o: ../Neuron.h
+
+CMakeFiles/ConvolutionalNetwork.dir/Matrix.cpp.o: ../Matrix.cpp
+CMakeFiles/ConvolutionalNetwork.dir/Matrix.cpp.o: ../Matrix.h
 
 CMakeFiles/ConvolutionalNetwork.dir/NeuralLayer.cpp.o: ../NeuralLayer.cpp
 CMakeFiles/ConvolutionalNetwork.dir/NeuralLayer.cpp.o: ../NeuralLayer.h
@@ -53,6 +62,9 @@ CMakeFiles/ConvolutionalNetwork.dir/SigmoidNeuron.cpp.o: ../RandomGenerator.h
 CMakeFiles/ConvolutionalNetwork.dir/SigmoidNeuron.cpp.o: ../SigmoidNeuron.cpp
 CMakeFiles/ConvolutionalNetwork.dir/SigmoidNeuron.cpp.o: ../SigmoidNeuron.h
 
+CMakeFiles/ConvolutionalNetwork.dir/main.cpp.o: ../FeatureMap.h
+CMakeFiles/ConvolutionalNetwork.dir/main.cpp.o: ../Filter.h
+CMakeFiles/ConvolutionalNetwork.dir/main.cpp.o: ../Matrix.h
 CMakeFiles/ConvolutionalNetwork.dir/main.cpp.o: ../RandomGenerator.h
 CMakeFiles/ConvolutionalNetwork.dir/main.cpp.o: ../main.cpp
 

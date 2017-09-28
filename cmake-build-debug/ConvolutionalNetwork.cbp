@@ -8,158 +8,168 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug"/>
+				<Option working_dir="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug"/>
+				<Option working_dir="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug"/>
+				<Option working_dir="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ConvolutionalNetwork">
-				<Option output="/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug/ConvolutionalNetwork" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug"/>
+				<Option output="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug/ConvolutionalNetwork" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 ConvolutionalNetwork"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 ConvolutionalNetwork"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ConvolutionalNetwork/fast">
-				<Option output="/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug/ConvolutionalNetwork" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug"/>
+				<Option output="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug/ConvolutionalNetwork" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 ConvolutionalNetwork/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 ConvolutionalNetwork/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/ConvolutionalLayer.cpp">
+		<Unit filename="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/ConvolutionalLayer.cpp">
 			<Option target="ConvolutionalNetwork"/>
 		</Unit>
-		<Unit filename="/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/ConvolutionalLayer.h">
+		<Unit filename="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/ConvolutionalLayer.h">
 			<Option target="ConvolutionalNetwork"/>
 		</Unit>
-		<Unit filename="/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/ConvolutionalNeuralNetwork.cpp">
+		<Unit filename="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/ConvolutionalNeuralNetwork.cpp">
 			<Option target="ConvolutionalNetwork"/>
 		</Unit>
-		<Unit filename="/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/ConvolutionalNeuralNetwork.h">
+		<Unit filename="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/ConvolutionalNeuralNetwork.h">
 			<Option target="ConvolutionalNetwork"/>
 		</Unit>
-		<Unit filename="/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/ConvolutionalNeuron.cpp">
+		<Unit filename="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/ConvolutionalNeuron.cpp">
 			<Option target="ConvolutionalNetwork"/>
 		</Unit>
-		<Unit filename="/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/ConvolutionalNeuron.h">
+		<Unit filename="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/ConvolutionalNeuron.h">
 			<Option target="ConvolutionalNetwork"/>
 		</Unit>
-		<Unit filename="/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/Filter.cpp">
+		<Unit filename="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/FeatureMap.cpp">
 			<Option target="ConvolutionalNetwork"/>
 		</Unit>
-		<Unit filename="/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/Filter.h">
+		<Unit filename="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/FeatureMap.h">
 			<Option target="ConvolutionalNetwork"/>
 		</Unit>
-		<Unit filename="/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/FullyConnectedLayer.cpp">
+		<Unit filename="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/Filter.cpp">
 			<Option target="ConvolutionalNetwork"/>
 		</Unit>
-		<Unit filename="/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/FullyConnectedLayer.h">
+		<Unit filename="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/Filter.h">
 			<Option target="ConvolutionalNetwork"/>
 		</Unit>
-		<Unit filename="/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/InputLayer.cpp">
+		<Unit filename="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/FullyConnectedLayer.cpp">
 			<Option target="ConvolutionalNetwork"/>
 		</Unit>
-		<Unit filename="/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/InputLayer.h">
+		<Unit filename="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/FullyConnectedLayer.h">
 			<Option target="ConvolutionalNetwork"/>
 		</Unit>
-		<Unit filename="/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/NeuralLayer.cpp">
+		<Unit filename="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/InputLayer.cpp">
 			<Option target="ConvolutionalNetwork"/>
 		</Unit>
-		<Unit filename="/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/NeuralLayer.h">
+		<Unit filename="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/InputLayer.h">
 			<Option target="ConvolutionalNetwork"/>
 		</Unit>
-		<Unit filename="/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/Neuron.cpp">
+		<Unit filename="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/Matrix.cpp">
 			<Option target="ConvolutionalNetwork"/>
 		</Unit>
-		<Unit filename="/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/Neuron.h">
+		<Unit filename="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/Matrix.h">
 			<Option target="ConvolutionalNetwork"/>
 		</Unit>
-		<Unit filename="/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/PoolingLayer.cpp">
+		<Unit filename="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/NeuralLayer.cpp">
 			<Option target="ConvolutionalNetwork"/>
 		</Unit>
-		<Unit filename="/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/PoolingLayer.h">
+		<Unit filename="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/NeuralLayer.h">
 			<Option target="ConvolutionalNetwork"/>
 		</Unit>
-		<Unit filename="/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/RandomGenerator.cpp">
+		<Unit filename="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/Neuron.cpp">
 			<Option target="ConvolutionalNetwork"/>
 		</Unit>
-		<Unit filename="/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/RandomGenerator.h">
+		<Unit filename="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/Neuron.h">
 			<Option target="ConvolutionalNetwork"/>
 		</Unit>
-		<Unit filename="/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/ReluLayer.cpp">
+		<Unit filename="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/PoolingLayer.cpp">
 			<Option target="ConvolutionalNetwork"/>
 		</Unit>
-		<Unit filename="/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/ReluLayer.h">
+		<Unit filename="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/PoolingLayer.h">
 			<Option target="ConvolutionalNetwork"/>
 		</Unit>
-		<Unit filename="/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/SigmoidNeuron.cpp">
+		<Unit filename="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/RandomGenerator.cpp">
 			<Option target="ConvolutionalNetwork"/>
 		</Unit>
-		<Unit filename="/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/SigmoidNeuron.h">
+		<Unit filename="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/RandomGenerator.h">
 			<Option target="ConvolutionalNetwork"/>
 		</Unit>
-		<Unit filename="/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/main.cpp">
+		<Unit filename="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/ReluLayer.cpp">
 			<Option target="ConvolutionalNetwork"/>
 		</Unit>
-		<Unit filename="/home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/CMakeLists.txt">
+		<Unit filename="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/ReluLayer.h">
+			<Option target="ConvolutionalNetwork"/>
+		</Unit>
+		<Unit filename="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/SigmoidNeuron.cpp">
+			<Option target="ConvolutionalNetwork"/>
+		</Unit>
+		<Unit filename="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/SigmoidNeuron.h">
+			<Option target="ConvolutionalNetwork"/>
+		</Unit>
+		<Unit filename="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/main.cpp">
+			<Option target="ConvolutionalNetwork"/>
+		</Unit>
+		<Unit filename="/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

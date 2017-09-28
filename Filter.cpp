@@ -3,3 +3,13 @@
 //
 
 #include "Filter.h"
+
+Filter::Filter(unsigned long width, unsigned long height) : Matrix(width,height) {
+}
+
+Filter::~Filter() {
+
+}
+
+
+

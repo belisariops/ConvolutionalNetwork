@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/belisariops/JetBrains/clion-2017.2/bin/cmake/bin/cmake
+CMAKE_COMMAND = /opt/clion/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/belisariops/JetBrains/clion-2017.2/bin/cmake/bin/cmake -E remove -f
+RM = /opt/clion/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork
+CMAKE_SOURCE_DIR = /home/belisariops/WorkSpace/C++/ConvolutionalNetwork
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug
+CMAKE_BINARY_DIR = /home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/belisariops/Documents/Workspace/C++/ConvolutionalNetwor
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/belisariops/JetBrains/clion-2017.2/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/opt/clion/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/belisariops/JetBrains/clion-2017.2/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/opt/clion/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug/CMakeFiles /home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug/CMakeFiles /home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/belisariops/Documents/Workspace/C++/ConvolutionalNetwork/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -204,6 +204,33 @@ ConvolutionalNeuron.cpp.s:
 	$(MAKE) -f CMakeFiles/ConvolutionalNetwork.dir/build.make CMakeFiles/ConvolutionalNetwork.dir/ConvolutionalNeuron.cpp.s
 .PHONY : ConvolutionalNeuron.cpp.s
 
+FeatureMap.o: FeatureMap.cpp.o
+
+.PHONY : FeatureMap.o
+
+# target to build an object file
+FeatureMap.cpp.o:
+	$(MAKE) -f CMakeFiles/ConvolutionalNetwork.dir/build.make CMakeFiles/ConvolutionalNetwork.dir/FeatureMap.cpp.o
+.PHONY : FeatureMap.cpp.o
+
+FeatureMap.i: FeatureMap.cpp.i
+
+.PHONY : FeatureMap.i
+
+# target to preprocess a source file
+FeatureMap.cpp.i:
+	$(MAKE) -f CMakeFiles/ConvolutionalNetwork.dir/build.make CMakeFiles/ConvolutionalNetwork.dir/FeatureMap.cpp.i
+.PHONY : FeatureMap.cpp.i
+
+FeatureMap.s: FeatureMap.cpp.s
+
+.PHONY : FeatureMap.s
+
+# target to generate assembly for a file
+FeatureMap.cpp.s:
+	$(MAKE) -f CMakeFiles/ConvolutionalNetwork.dir/build.make CMakeFiles/ConvolutionalNetwork.dir/FeatureMap.cpp.s
+.PHONY : FeatureMap.cpp.s
+
 Filter.o: Filter.cpp.o
 
 .PHONY : Filter.o
@@ -284,6 +311,33 @@ InputLayer.s: InputLayer.cpp.s
 InputLayer.cpp.s:
 	$(MAKE) -f CMakeFiles/ConvolutionalNetwork.dir/build.make CMakeFiles/ConvolutionalNetwork.dir/InputLayer.cpp.s
 .PHONY : InputLayer.cpp.s
+
+Matrix.o: Matrix.cpp.o
+
+.PHONY : Matrix.o
+
+# target to build an object file
+Matrix.cpp.o:
+	$(MAKE) -f CMakeFiles/ConvolutionalNetwork.dir/build.make CMakeFiles/ConvolutionalNetwork.dir/Matrix.cpp.o
+.PHONY : Matrix.cpp.o
+
+Matrix.i: Matrix.cpp.i
+
+.PHONY : Matrix.i
+
+# target to preprocess a source file
+Matrix.cpp.i:
+	$(MAKE) -f CMakeFiles/ConvolutionalNetwork.dir/build.make CMakeFiles/ConvolutionalNetwork.dir/Matrix.cpp.i
+.PHONY : Matrix.cpp.i
+
+Matrix.s: Matrix.cpp.s
+
+.PHONY : Matrix.s
+
+# target to generate assembly for a file
+Matrix.cpp.s:
+	$(MAKE) -f CMakeFiles/ConvolutionalNetwork.dir/build.make CMakeFiles/ConvolutionalNetwork.dir/Matrix.cpp.s
+.PHONY : Matrix.cpp.s
 
 NeuralLayer.o: NeuralLayer.cpp.o
 
@@ -492,6 +546,9 @@ help:
 	@echo "... ConvolutionalNeuron.o"
 	@echo "... ConvolutionalNeuron.i"
 	@echo "... ConvolutionalNeuron.s"
+	@echo "... FeatureMap.o"
+	@echo "... FeatureMap.i"
+	@echo "... FeatureMap.s"
 	@echo "... Filter.o"
 	@echo "... Filter.i"
 	@echo "... Filter.s"
@@ -501,6 +558,9 @@ help:
 	@echo "... InputLayer.o"
 	@echo "... InputLayer.i"
 	@echo "... InputLayer.s"
+	@echo "... Matrix.o"
+	@echo "... Matrix.i"
+	@echo "... Matrix.s"
 	@echo "... NeuralLayer.o"
 	@echo "... NeuralLayer.i"
 	@echo "... NeuralLayer.s"
