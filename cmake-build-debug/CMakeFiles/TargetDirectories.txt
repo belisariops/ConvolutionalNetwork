@@ -1,3 +1,0 @@
-/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/belisariops/WorkSpace/C++/ConvolutionalNetwork/cmake-build-debug/CMakeFiles/ConvolutionalNetwork.dir
