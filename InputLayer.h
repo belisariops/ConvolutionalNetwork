@@ -18,7 +18,7 @@ public:
     void getOutput();
     void buildRandomLayer();
     void backPropagation();
-    void forwardPropagation(FeatureMap *input);
+    void forwardPropagation(std::vector<FeatureMap *>input);
 private:
     NeuralLayer *nextLayer;
     int height;

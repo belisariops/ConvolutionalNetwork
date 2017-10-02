@@ -6,14 +6,16 @@
 #define CONVOLUTIONALNETWORK_FEATUREMAP_H
 
 
-#include "Filter.h"
+#include "Matrix.h"
+
+class Filter;
 
 
 class FeatureMap : public Matrix {
 public:
     FeatureMap(unsigned long width, unsigned long height);
     ~FeatureMap();
-    FeatureMap* convMap(Filter *filter);
+    Filter *calculateDeltasForPreviousLayer(Filter *filter);
 private:
     typedef Matrix super;
 

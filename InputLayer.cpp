@@ -28,7 +28,7 @@ void InputLayer::backPropagation() {
 
 }
 
-void InputLayer::forwardPropagation(FeatureMap *input) {
+void InputLayer::forwardPropagation(std::vector<FeatureMap *> input) {
     //TODO retornar clase seleccionada
     this->nextLayer->forwardPropagation(input);
 }

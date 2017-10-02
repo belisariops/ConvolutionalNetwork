@@ -43,7 +43,8 @@ double NeuralLayer::transferDerivative(double output) {
 }
 
 std::vector<Filter *> NeuralLayer::getKernels() {
-    return nullptr;
+    std::vector<Filter *> emptyVector;
+    return emptyVector;
 }
 
 

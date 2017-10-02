@@ -39,7 +39,7 @@ std::vector<FeatureMap *> ConvolutionalLayer::calcOutput(std::vector<FeatureMap 
     for (Filter* kernel : kernels) {
         //TODO Paralelizar
         for (FeatureMap *map : input) {
-            FeatureMap *outMap = map->convMap(kernel);
+            FeatureMap *outMap = kernel->convMap(map);
             kernel->setFeatureMap(outMap);
             output.push_back(outMap);
         }
@@ -51,7 +51,7 @@ void ConvolutionalLayer::updateWeights(FeatureMap *input) {
     //puede ser que los valores de los pesos se sumen y no se cambien directamente
     for(Filter *filter : this->kernels) {
         Filter *rotDeltas = filter->rot();
-        FeatureMap *result = input->convMap(rotDeltas);
+        FeatureMap *result = rotDeltas->convMap(input);
         filter = new Filter(result->getValues());
         delete rotDeltas;
         delete result;
