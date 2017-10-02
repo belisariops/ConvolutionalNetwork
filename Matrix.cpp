@@ -47,8 +47,14 @@ void Matrix::setValue(int widthPosition, int heightPosition, double value) {
 
 }
 
+
+
 std::vector<std::vector<double>> Matrix::getMap() {
     return map;
+}
+
+double Matrix::getValue(int widthPosition, int heightPosition) {
+    return map[widthPosition][heightPosition];
 }
 
 

@@ -3,6 +3,7 @@
 //
 
 #include <algorithm>
+#include <iostream>
 #include "Filter.h"
 
 Filter::Filter(unsigned long width, unsigned long height) : Matrix(width,height) {
@@ -30,7 +31,11 @@ Filter* Filter::rot() {
 }
 
 Filter::Filter(std::vector<std::vector<double>> values) : Matrix(values[0].size(),values.size()){
-    this->map = values;
+    for (int i = 0; i < values.size(); ++i) {
+        for (int j = 0; j < values[i].size(); ++j) {
+            this->setValue(i,j,values[i][j]);
+        }
+    }
 }
 
 void Filter::setDeltas(std::vector<std::vector<double>> newDeltas) {
@@ -93,6 +98,14 @@ FeatureMap *Filter::convMap(FeatureMap *map) {
 
 std::vector<std::vector<double>> Filter::getDeltas() {
     return this->deltas;
+}
+
+void Filter::setDeltaValue(int width, int height,double value) {
+    this->deltas[width][height] = value;
+}
+
+double Filter::getDeltaValue(int width, int height) {
+    return this->deltas[width][height];
 }
 
 

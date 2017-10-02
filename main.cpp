@@ -82,17 +82,23 @@ int main(int argc, char** argv) {
 
     Filter* f = new Filter(2,2);
 
-
     f->setValue(0,1,2);
-    f->setValue(1,1,2);
-    f->setValue(1,0,2);
-    f->setValue(0,0,2);
+    f->setValue(1,1,4);
+    f->setValue(1,0,3);
+    f->setValue(0,0,1);
+
+    f->setDeltaValue(0,0,-1);
+    f->setDeltaValue(0,1,1);
+    f->setDeltaValue(1,0,1);
+    f->setDeltaValue(1,1,-1);
 
     FeatureMap * k = new FeatureMap(2,2);
     k->setValue(0,1,2);
     k->setValue(1,1,2);
     k->setValue(1,0,2);
     k->setValue(0,0,2);
+
+    Filter *other = k->calculateDeltasForPreviousLayer(f);
 //
 //    FeatureMap* h = k->conv(f);
 //    std::cout << h->getValues()[0][0] << std::endl;

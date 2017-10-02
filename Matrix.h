@@ -16,6 +16,7 @@ public:
     unsigned long getHeight()const;
     std::vector<std::vector<double>> getValues();
     void setValue(int widthPosition,int heightPosition,double value);
+    double getValue(int widthPosition, int heightPosition);
     std::vector<std::vector<double>> getMap();
     virtual ~Matrix();
 
