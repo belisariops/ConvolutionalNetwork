@@ -10,9 +10,18 @@
 
 class ConvolutionalLayer : NeuralLayer {
 private:
-    std::vector<std::vector<double>> kernels;
+    std::vector<FeatureMap *> calcOutput(std::vector<FeatureMap *> input);
+    std::vector<Filter *> kernels;
+    std::vector<double> output;
+
 public:
     ConvolutionalLayer(int kernelWidth, int kernelHeight,int kernelQuantity);
+    void buildRandomLayer();
+    void backPropagation();
+    void forwardPropagation(std::vector<FeatureMap *> input);
+    void updateWeights(FeatureMap *input);
+    void updateDeltas();
+    std::vector<Filter *> getKernels();
 };
 
 

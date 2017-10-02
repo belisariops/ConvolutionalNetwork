@@ -7,6 +7,7 @@
 
 
 #include "NeuralLayer.h"
+#include "Filter.h"
 
 class InputLayer : NeuralLayer{
 public:
@@ -14,9 +15,10 @@ public:
     double *getOutput(std::vector<double> input);
     int getWidth();
     int getHeight();
+    void getOutput();
     void buildRandomLayer();
     void backPropagation();
-    void forwardPropagation();
+    void forwardPropagation(FeatureMap *input);
 private:
     NeuralLayer *nextLayer;
     int height;

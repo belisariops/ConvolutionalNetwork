@@ -21,13 +21,19 @@ int InputLayer::getHeight() {
 }
 
 void InputLayer::buildRandomLayer() {
+
 }
 
 void InputLayer::backPropagation() {
 
 }
 
-void InputLayer::forwardPropagation() {
+void InputLayer::forwardPropagation(FeatureMap *input) {
+    //TODO retornar clase seleccionada
+    this->nextLayer->forwardPropagation(input);
+}
+
+void InputLayer::getOutput() {
 
 }
 

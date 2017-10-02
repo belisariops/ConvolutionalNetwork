@@ -8,6 +8,8 @@
 
 #include <vector>
 #include "Neuron.h"
+#include "Filter.h"
+#include "FeatureMap.h"
 
 class NeuralLayer {
 public:
@@ -17,11 +19,13 @@ public:
     void setNextLayer(NeuralLayer *layer);
     void connect(NeuralLayer *layer);
     virtual void buildRandomLayer();
-    virtual double *getOutput(std::vector<double> input) = 0;
     virtual void backPropagation() =  0;
-    virtual void forwardPropagation() = 0;
+    virtual void forwardPropagation(std::vector<FeatureMap *> input) = 0;
+    virtual void forwardPropagationVector(std::vector<double> input);
+    virtual std::vector<Filter *> getKernels();
 
 protected:
+    double transferDerivative(double output);
     std::vector<double> getWeights();
 private:
     NeuralLayer *previousLayer;
