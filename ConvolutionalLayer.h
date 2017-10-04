@@ -9,19 +9,15 @@
 #include "NeuralLayer.h"
 
 class ConvolutionalLayer : NeuralLayer {
-private:
-    std::vector<FeatureMap *> calcOutput(std::vector<FeatureMap *> input);
-    std::vector<Filter *> kernels;
-    std::vector<FeatureMap *> output;
-
 public:
-    ConvolutionalLayer(int kernelWidth, int kernelHeight,int kernelQuantity);
-    void buildRandomLayer();
-    void backPropagation();
-    void forwardPropagation(std::vector<FeatureMap *> input);
-    void updateWeights(FeatureMap *input);
+    ConvolutionalLayer(int kernelHeight,int kernelWidth,int kernelQuantity,int inputHeight, int inputWidth);
+    ~ConvolutionalLayer();
+    void buildRandomLayer(int minValues, int maxValues) override;
+    void backPropagation() override;
+    void forwardPropagation(Matrix *input, int quantity);
+    void updateWeights(Matrix *input, int quantity);
     void updateDeltas();
-    std::vector<Filter *> getKernels();
+private:
 };
 
 

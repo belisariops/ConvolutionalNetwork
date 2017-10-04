@@ -7,22 +7,14 @@
 
 
 #include "Matrix.h"
-#include "NeuronStructure.h"
-
-class Filter;
+#include "Filter.h"
 
 
-class FeatureMap : public Matrix {
+class FeatureMap  {
 public:
-    FeatureMap(unsigned long width, unsigned long height);
+    FeatureMap(int height, int width);
     ~FeatureMap();
-    void setOutput(int width, int height, double value);
-    void setDelta(int width, int height, double value);
-    Filter *calculateDeltasForPreviousLayer(Filter *filter);
-    void rotDeltas();
-private:
-    typedef Matrix super;
-    std::vector<std::vector<NeuronStructure *>> neurons;
+    FeatureMap correlation(Filter filter);
 };
 
 

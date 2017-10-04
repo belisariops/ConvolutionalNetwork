@@ -4,23 +4,13 @@
 
 #include <iostream>
 #include "Matrix.h"
+#include "RandomGenerator.h"
 
-Matrix::Matrix(unsigned long h, unsigned long w) {
-    std::vector<double> a(0,h);
+Matrix::Matrix(int h, int w) {
     this->values = new double*[h];
     for (int k = 0; k < h; ++k) {
         this->values[k] = new double[w];
     }
-
-    //TODO luego borrar
-    for (int i =0; i < w; i++) {
-        std:: vector<double> vec;
-        for (int j = 0; j < h; j++)
-            vec.push_back(0);
-        this->map.push_back(vec);
-
-    }
-    //Hasta aca
 
     this->rotated = false;
     this->w = w;
@@ -29,13 +19,24 @@ Matrix::Matrix(unsigned long h, unsigned long w) {
 
 }
 
-Matrix::~Matrix() {
-    //TODO borrar
-    for (std::vector<double> x : this->map)
-        x.clear();
-    this->map.clear();
-    //Hasta aca
+Matrix::Matrix(const Matrix &other)   {
+    h = other.h;
+    w = other.w;
+    values = new double*[h];
+    for (int height = 0; height < h; ++height) {
+        values[height] = new double[w];
+    }
 
+    for (int height = 0; height < h; ++height) {
+        for (int width = 0; width < w; ++width) {
+            values[height][width] = other.values[height][width];
+        }
+    }
+    rotated = other.rotated;
+
+}
+
+Matrix::~Matrix() {
     for(int i=0; i < this->h; ++i)
         delete[] this->values[i];
     delete[] this->values;
@@ -44,43 +45,22 @@ Matrix::~Matrix() {
 Matrix::Matrix() {
 }
 
-unsigned long Matrix::getWidth()const {
+int Matrix::getWidth()const {
     return w;
 }
 
-unsigned long Matrix::getHeight()const {
+int Matrix::getHeight()const {
     return h;
 }
 
-std::vector<std::vector<double>> Matrix::getValues() {
-    return map;
-
-}
-
-void Matrix::setValue(int widthPosition, int heightPosition, double value) {
-    this->map[widthPosition][heightPosition] = value;
-
-}
-
-
-
-std::vector<std::vector<double>> Matrix::getMap() {
-    return map;
-}
-
-double Matrix::getValue(int widthPosition, int heightPosition) {
-    return map[widthPosition][heightPosition];
-}
-
-
-/*other matrix needs to be smaller than this matrix*/
-Matrix Matrix::operator*(const Matrix &other) {
+/*other matrix needs to be smaller than this matrix to make
+ * the convolution operation*/
+Matrix Matrix::operator*(const Matrix &other) const {
     int width = w - other.w + 1;
     int height = h - other.h + 1;
     if (width < 0 || height < 0)
         return Matrix();
     Matrix temp(width,height);
-
     if (!rotated && !other.rotated) {
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
@@ -88,7 +68,6 @@ Matrix Matrix::operator*(const Matrix &other) {
                 for (int k = 0; k < other.h; ++k) {
                     for (int l = 0; l < other.w; ++l) {
                         temp.values[i][j] += values[i+k][j+l]*other.values[k][l];
-                        std::cout << temp.values[i][j]<< " " << i << " "<< j  << std::endl;
                     }
 
                 }
@@ -137,12 +116,11 @@ Matrix Matrix::operator*(const Matrix &other) {
             }
         }
     }
-
     return temp;
 }
 
 void Matrix::rot() {
-    this->rotated = true;
+    rotated = !rotated;
 }
 
 void Matrix::setValues(int height, int width, double value) {
@@ -152,5 +130,62 @@ void Matrix::setValues(int height, int width, double value) {
 double Matrix::getValues(int height, int width) {
     return values[height][width];
 }
+
+Matrix &Matrix::operator=(const Matrix& other) {
+    this->h = other.h;
+    this->w = other.w;
+    values = new double*[h];
+    for (int height = 0; height < h; ++height) {
+        values[height] = new double[w];
+    }
+
+    for (int height = 0; height < h; ++height) {
+        for (int width = 0; width < w; ++width) {
+            values[height][width] = other.values[height][width];
+        }
+    }
+    rotated = other.rotated;
+
+    return *this;
+}
+
+/*Have to be the same size*/
+Matrix Matrix::operator+(const Matrix &other) const {
+    if (h != other.h && w != other.w)
+        return Matrix();
+    Matrix temp(h,w);
+    for (int i = 0; i < h; ++i) {
+        for (int j = 0; j < w; ++j) {
+            temp.values[i][j] = values[i][j] + other.values[i][j];
+        }
+    }
+    return temp;
+}
+
+/*Have to be the same size*/
+Matrix Matrix::operator+=(const Matrix &other) const {
+    if (h != other.h && w != other.w) {
+        return Matrix();
+    }
+    Matrix temp(h,w);
+    for (int i = 0; i < h; ++i) {
+        for (int j = 0; j < w; ++j) {
+            temp.values[i][j] += values[i][j] + other.values[i][j];
+        }
+    }
+    return temp;
+}
+
+void Matrix::setRandomValues(int min, int max) {
+    RandomGenerator generator = RandomGenerator((unsigned int)time(0));
+    for (int height = 0; height < h; ++h) {
+        for (int width = 0; width < w; ++width) {
+            values[h][w] = generator.randomBetween(min,max);
+        }
+    }
+
+}
+
+
 
 

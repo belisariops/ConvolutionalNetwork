@@ -11,26 +11,25 @@
 class Matrix {
 public:
     Matrix();
-    Matrix(unsigned long h, unsigned long w);
-    unsigned long getWidth()const;
-    unsigned long getHeight()const;
-    std::vector<std::vector<double>> getValues();
-    void setValue(int widthPosition,int heightPosition,double value);
-    double getValue(int widthPosition, int heightPosition);
-    std::vector<std::vector<double>> getMap();
-    Matrix operator* (const Matrix& other);
+    Matrix(int h, int w);
+    Matrix(const Matrix& other);
+    int getWidth()const;
+    int getHeight()const;
+    Matrix& operator= (const Matrix& other);
+    Matrix operator* (const Matrix& other) const;
+    Matrix operator+ (const Matrix& other) const;
+    Matrix operator+= (const Matrix& other) const;
     void setValues(int height,int width,double value);
     double getValues(int height,int width);
     void rot();
     virtual ~Matrix();
+    void setRandomValues(int min, int max);
 
 private:
-    unsigned long h,w;
+    int h,w;
     double** values;
     bool rotated;
 
-protected:
-    std::vector<std::vector<double>> map;
 };
 
 

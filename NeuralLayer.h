@@ -18,19 +18,21 @@ public:
     void setPreviousLayer(NeuralLayer *layer);
     void setNextLayer(NeuralLayer *layer);
     void connect(NeuralLayer *layer);
-    virtual void buildRandomLayer();
+    int getChannels();
+    virtual void buildRandomLayer(int minValues,int maxValues) = 0;
     virtual void backPropagation() =  0;
-    virtual void forwardPropagation(std::vector<FeatureMap *> input) = 0;
-    virtual void forwardPropagationVector(std::vector<double> input);
-    virtual std::vector<Filter *> getKernels();
+    virtual void forwardPropagation(Matrix *input, int quantity) = 0;
 
 protected:
     double transferDerivative(double output);
-    std::vector<double> getWeights();
-private:
+    Matrix *outputFeatureMap;
+    Matrix *kernels;
+    Matrix *deltas;
+    int channels;
+    int kernelHeight;
+    int kernelWidth;
     NeuralLayer *previousLayer;
     NeuralLayer *nextLayer;
-    std::vector<double> weights;
 };
 
 

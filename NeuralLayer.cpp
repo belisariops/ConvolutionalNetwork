@@ -26,25 +26,12 @@ void NeuralLayer::connect(NeuralLayer *layer) {
     layer->setNextLayer(this);
 }
 
-void NeuralLayer::buildRandomLayer() {
-
-}
-
-std::vector<double> NeuralLayer::getWeights() {
-    return this->weights;
-}
-
-void NeuralLayer::forwardPropagationVector(std::vector<double> input) {
-    std::cout << "NeruralLayer no hace nada" << std::endl;
-}
-
 double NeuralLayer::transferDerivative(double output) {
     return output*(1.0 - output);
 }
 
-std::vector<Filter *> NeuralLayer::getKernels() {
-    std::vector<Filter *> emptyVector;
-    return emptyVector;
+int NeuralLayer::getChannels() {
+    return channels;
 }
 
 
