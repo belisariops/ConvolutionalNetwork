@@ -12,7 +12,7 @@ class ConvolutionalLayer : NeuralLayer {
 private:
     std::vector<FeatureMap *> calcOutput(std::vector<FeatureMap *> input);
     std::vector<Filter *> kernels;
-    std::vector<double> output;
+    std::vector<FeatureMap *> output;
 
 public:
     ConvolutionalLayer(int kernelWidth, int kernelHeight,int kernelQuantity);

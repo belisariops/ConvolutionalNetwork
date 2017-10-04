@@ -80,40 +80,67 @@ std::vector<std::vector<int>> tifImagetoMatrix(std::string imageName) {
 int main(int argc, char** argv) {
     std::cout << "Hello, World!" << std::endl;
 
-    Filter* f = new Filter(2,2);
+//    Filter* f = new Filter(3,3);
+//
+//    f->setValue(0,1,2);
+//    f->setValue(1,1,4);
+//    f->setValue(1,0,3);
+//    f->setValue(0,0,1);
+//
+//    f->setDeltaValue(0,0,-1);
+//    f->setDeltaValue(0,1,1);
+//    f->setDeltaValue(1,0,1);
+//    f->setDeltaValue(1,1,-1);
 
-    f->setValue(0,1,2);
-    f->setValue(1,1,4);
-    f->setValue(1,0,3);
-    f->setValue(0,0,1);
+    FeatureMap * k = new FeatureMap(3,3);
+    k->setOutput(0,0,0);
+    k->setOutput(0,1,1);
+    k->setOutput(0,2,2);
+    k->setOutput(1,0,3);
+    k->setOutput(1,1,4);
+    k->setOutput(1,1,5);
+    k->setOutput(2,0,6);
+    k->setOutput(2,1,7);
+    k->setOutput(2,2,8);
 
-    f->setDeltaValue(0,0,-1);
-    f->setDeltaValue(0,1,1);
-    f->setDeltaValue(1,0,1);
-    f->setDeltaValue(1,1,-1);
-
-    FeatureMap * k = new FeatureMap(2,2);
-    k->setValue(0,1,2);
-    k->setValue(1,1,2);
-    k->setValue(1,0,2);
-    k->setValue(0,0,2);
-
-    Filter *other = k->calculateDeltasForPreviousLayer(f);
+    free(k);
+//
+//    Filter *other = k->calculateDeltasForPreviousLayer(f);
 //
 //    FeatureMap* h = k->conv(f);
 //    std::cout << h->getValues()[0][0] << std::endl;
-//
-//    std::vector<std::vector<int>> image = tifImagetoMatrix("00001.tif");
-//
-//    for (std::vector<int> vectorLine : image) {
-//        for (int pixel : vectorLine)
-//            std::cout << pixel << "";
-//        std::cout<< std::endl;
-//    }
-//    std::cout << image.size() << " " << image[0].size() << std::endl;
 
+    std::vector<std::vector<int>> image = tifImagetoMatrix("00001.tif");
 
+    for (std::vector<int> vectorLine : image) {
+        for (int pixel : vectorLine)
+            std::cout << pixel << "";
+        std::cout<< std::endl;
+    }
+    std::cout << image.size() << " " << image[0].size() << std::endl;
 
+    Matrix m = Matrix(3,3);
+    m.setValues(0,0,1);
+    m.setValues(0,1,2);
+    m.setValues(0,2,3);
+    m.setValues(1,0,4);
+    m.setValues(1,1,5);
+    m.setValues(1,2,6);
+    m.setValues(2,0,7);
+    m.setValues(2,1,8);
+    m.setValues(2,2,9);
+    Matrix x = Matrix(2,2);
+    x.setValues(0,0,1);
+    x.setValues(0,1,2);
+    x.setValues(1,0,3);
+    x.setValues(1,0,4);
+    Matrix b = m*x;
+    for (int i = 0; i < 2; ++i) {
+        for (int j = 0; j < 2; ++j) {
+            std::cout << b.getValues(i,j);
+        }
+        std::cout << std::endl;
+    }
     return 0;
 
 

@@ -18,10 +18,16 @@ public:
     void setValue(int widthPosition,int heightPosition,double value);
     double getValue(int widthPosition, int heightPosition);
     std::vector<std::vector<double>> getMap();
+    Matrix operator* (const Matrix& other);
+    void setValues(int height,int width,double value);
+    double getValues(int height,int width);
+    void rot();
     virtual ~Matrix();
 
 private:
     unsigned long h,w;
+    double** values;
+    bool rotated;
 
 protected:
     std::vector<std::vector<double>> map;

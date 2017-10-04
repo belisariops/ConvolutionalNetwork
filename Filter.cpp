@@ -6,7 +6,7 @@
 #include <iostream>
 #include "Filter.h"
 
-Filter::Filter(unsigned long width, unsigned long height) : Matrix(width,height) {
+Filter::Filter(unsigned long width, unsigned long height) {
     for (int h = 0; h < height; ++h) {
         std::vector<double> line(width);
         this->deltas.push_back(line);
