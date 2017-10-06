@@ -164,6 +164,14 @@ int main(int argc, char** argv) {
         }
         std::cout<<std::endl;
     }
+
+    c = matrixA*matrixB;
+    for (int k = 0; k < 2; ++k) {
+        for (int h = 0; h < 2; ++h) {
+            std::cout<< c.getValues(k,h) << " ";
+        }
+        std::cout<<std::endl;
+    }
     return 0;
 
 

@@ -8,7 +8,7 @@
 
 Matrix::Matrix(int h, int w) {
     this->values = new double*[h];
-    for (int k = 0; k < h; ++k) {
+    for (int k = 0; k < h; k++) {
         this->values[k] = new double[w];
     }
 
@@ -20,25 +20,26 @@ Matrix::Matrix(int h, int w) {
 }
 
 Matrix::Matrix(const Matrix &other)   {
+    std::cout << "Copy constructor" << std::endl;
+
     h = other.h;
     w = other.w;
     values = new double*[h];
     for (int height = 0; height < h; ++height) {
         values[height] = new double[w];
-    }
-
-    for (int height = 0; height < h; ++height) {
-        for (int width = 0; width < w; ++width) {
+        for (int width = 0; width < w; width++) {
             values[height][width] = other.values[height][width];
         }
     }
+
     rotated = other.rotated;
 
 }
 
 Matrix::~Matrix() {
-    for(int i=0; i < this->h; ++i)
+    for(int i=0; i < this->h; ++i) {
         delete[] this->values[i];
+    }
     delete[] this->values;
 }
 
@@ -89,27 +90,20 @@ Matrix Matrix::operator*(const Matrix &other) const {
         }
     }
 
-    double a,b,x;
     if (!rotated && other.rotated) {
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
                 //aaaaaaa
                 for (int k = other.h -1; k >=0; k--) {
                     for (int l = other.w -1; l >=0; l--) {
-                        a = values[i + other.h -1 -k][j + other.w -1 -l];
-                        b =other.values[k][l];
-                        x =a*b;
-                        if(i == 0 & j == 1)
-                            std::cout<< x <<std::endl;
+
                         temp.values[i][j] += values[i + other.h -1 -k][j + other.w -1 -l] *other.values[k][l];
                     }
 
                 }
             }
         }
-        std::cout << temp.values[0][1] << std::endl;
     }
-
     if (rotated && other.rotated) {
         for (int i = height -1; i >= 0; i--) {
             for (int j = width -1; j >= 0; j--) {
@@ -123,6 +117,7 @@ Matrix Matrix::operator*(const Matrix &other) const {
             }
         }
     }
+
     return temp;
 }
 
@@ -140,19 +135,21 @@ double Matrix::getValues(int height, int width) {
 }
 
 Matrix &Matrix::operator=(const Matrix& other) {
-    this->h = other.h;
-    this->w = other.w;
-    values = new double*[h];
-    for (int height = 0; height < h; ++height) {
-        values[height] = new double[w];
-    }
-
-    for (int height = 0; height < h; ++height) {
-        for (int width = 0; width < w; ++width) {
-            values[height][width] = other.values[height][width];
+    if (&other != this) {
+        this->h = other.h;
+        this->w = other.w;
+        values = new double *[h];
+        for (int height = 0; height < h; height++) {
+            values[height] = new double[w];
         }
+
+        for (int height = 0; height < h; height++) {
+            for (int width = 0; width < w; width++) {
+                values[height][width] = other.values[height][width];
+            }
+        }
+        rotated = other.rotated;
     }
-    rotated = other.rotated;
 
     return *this;
 }
