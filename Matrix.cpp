@@ -89,18 +89,25 @@ Matrix Matrix::operator*(const Matrix &other) const {
         }
     }
 
+    double a,b,x;
     if (!rotated && other.rotated) {
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
                 //aaaaaaa
                 for (int k = other.h -1; k >=0; k--) {
                     for (int l = other.w -1; l >=0; l--) {
-                        temp.values[i][j] += values[i + other.h -1 -k][j + other.w -1 -k] *other.values[k][l];
+                        a = values[i + other.h -1 -k][j + other.w -1 -l];
+                        b =other.values[k][l];
+                        x =a*b;
+                        if(i == 0 & j == 1)
+                            std::cout<< x <<std::endl;
+                        temp.values[i][j] += values[i + other.h -1 -k][j + other.w -1 -l] *other.values[k][l];
                     }
 
                 }
             }
         }
+        std::cout << temp.values[0][1] << std::endl;
     }
 
     if (rotated && other.rotated) {
@@ -121,6 +128,7 @@ Matrix Matrix::operator*(const Matrix &other) const {
 
 void Matrix::rot() {
     rotated = !rotated;
+    //std::cout << rotated<<std::endl;
 }
 
 void Matrix::setValues(int height, int width, double value) {

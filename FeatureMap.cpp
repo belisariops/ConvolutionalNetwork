@@ -5,7 +5,7 @@
 #include <iostream>
 #include "FeatureMap.h"
 
-FeatureMap::FeatureMap(int height, int width) : Matrix(height,width) {
+FeatureMap::FeatureMap(int height, int width)  {
 
 }
 
