@@ -42,8 +42,8 @@ void ConvolutionalLayer::backPropagation() {
 
 void ConvolutionalLayer::forwardPropagation(Matrix *input, int quantity) {
     //TODO
-    delete outputFeatureMap;
-    outputFeatureMap = new Matrix[channels];
+    //delete outputFeatureMap;
+    //outputFeatureMap = new Matrix[channels];
     for (int k = 0; k < channels; ++k) {
         int width = input[0].getWidth() - kernels[k].getWidth() + 1;
         int height = input[0].getHeight() - kernels[k].getHeight() + 1;
@@ -70,8 +70,6 @@ void ConvolutionalLayer::updateWeights(Matrix *input, int quantity) {
 void ConvolutionalLayer::updateDeltas() {
     for (int i = 0; i < channels; i++) {
         kernels[i].rot();
-
-        //TODO solucionar sigabort de nextLayer->getDeltas()[i]
         Matrix aux = kernels[i]*(nextLayer->getDeltas(i));
         aux.applyTransfereDerivative();
         deltas[i] = deltas[i] + aux;
