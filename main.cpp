@@ -119,59 +119,27 @@ int main(int argc, char** argv) {
 //    }
 //    std::cout << image.size() << " " << image[0].size() << std::endl;
 
-    Matrix m = Matrix(2,2);
-    m.setValues(0,0,1);
-    m.setValues(0,1,2);
-    m.setValues(1,0,3);
-    m.setValues(1,1,4);
-    Matrix x = Matrix(2,2);
-    x.setValues(0,0,1);
-    x.setValues(0,1,2);
-    x.setValues(1,0,3);
-    x.setValues(1,1,4);
+    Matrix *m = new Matrix(2,2);
+    m->setValues(0,0,1);
+    m->setValues(0,1,2);
+    m->setValues(1,0,3);
+    m->setValues(1,1,4);
+    Matrix *x = new Matrix(2,2);
+    x->setValues(0,0,1);
+    x->setValues(0,1,2);
+    x->setValues(1,0,3);
+    x->setValues(1,1,4);
     Matrix *b = new Matrix;
-    *b = x + m;
-    for (int i = 0; i < b->getHeight(); i++) {
-        for (int j = 0; j < b->getWidth(); j++) {
-            std::cout << b->getValues(i,j)<<" ";
-        }
-        std::cout << std::endl;
-    }
+
 
     ConvolutionalLayer *a = new ConvolutionalLayer(2,2,1,2,2);
+    ConvolutionalLayer *asdf = new ConvolutionalLayer(2,2,1,2,2);
+    a->forwardPropagation(m,1);
+    a->connect(asdf);
+    a->updateDeltas();
+    Matrix c  = a->getNextLayer()->getDeltas(0);
 
-    Matrix matrixA = Matrix(3,3);
-    Matrix matrixB = Matrix(2,2);
-    double value = 1;
-    for (int i = 0; i < 3; ++i) {
-        for (int j = 0; j < 3; ++j) {
-            matrixA.setValues(i,j,value);
-            value++;
-        }
-    }
-    value=1;
-    for (int k = 0; k < 2; ++k) {
-        for (int h = 0; h < 2; ++h) {
-            matrixB.setValues(k,h,value);
-            value ++;
-        }
-    }
-    matrixB.rot();
-    Matrix c = matrixA*matrixB;
-    for (int k = 0; k < 2; ++k) {
-        for (int h = 0; h < 2; ++h) {
-            std::cout<< c.getValues(k,h) << " ";
-        }
-        std::cout<<std::endl;
-    }
 
-    c = matrixA*matrixB;
-    for (int k = 0; k < 2; ++k) {
-        for (int h = 0; h < 2; ++h) {
-            std::cout<< c.getValues(k,h) << " ";
-        }
-        std::cout<<std::endl;
-    }
     return 0;
 
 

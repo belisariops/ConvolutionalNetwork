@@ -34,6 +34,10 @@ int NeuralLayer::getChannels() {
     return channels;
 }
 
+Matrix NeuralLayer::getDeltas(int index) {
+    return deltas[index];
+}
+
 
 
 

@@ -4,6 +4,7 @@
 
 #include <ctime>
 #include <cstdlib>
+#include <iostream>
 #include "ConvolutionalLayer.h"
 #include "RandomGenerator.h"
 
@@ -36,24 +37,24 @@ void ConvolutionalLayer::buildRandomLayer(int minValues, int maxValues) {
 }
 
 void ConvolutionalLayer::backPropagation() {
-
+    updateDeltas();
 }
 
 void ConvolutionalLayer::forwardPropagation(Matrix *input, int quantity) {
     //TODO
-    Matrix currentMap;
-    free(outputFeatureMap);
-    outputFeatureMap = (Matrix*)malloc(quantity * channels * sizeof(FeatureMap));
-    int count = 0;
-    for (int i = 0; i < quantity; ++i) {
-        currentMap = input[i];
-        for (int k = 0; k < channels; ++k) {
+    delete outputFeatureMap;
+    outputFeatureMap = new Matrix[channels];
+    for (int k = 0; k < channels; ++k) {
+        int width = input[0].getWidth() - kernels[k].getWidth() + 1;
+        int height = input[0].getHeight() - kernels[k].getHeight() + 1;
+        outputFeatureMap[k] = Matrix(height,width);
+        for (int i = 0; i < quantity; ++i) {
             kernels->rot();
-            outputFeatureMap[count] = currentMap*kernels[k];
+            outputFeatureMap[k] = outputFeatureMap[k] + input[i] * kernels[k];
             kernels->rot();
         }
     }
-    forwardPropagation(outputFeatureMap,count);
+    //forwardPropagation(outputFeatureMap,channels);
 }
 
 void ConvolutionalLayer::updateWeights(Matrix *input, int quantity) {
@@ -67,13 +68,20 @@ void ConvolutionalLayer::updateWeights(Matrix *input, int quantity) {
 }
 
 void ConvolutionalLayer::updateDeltas() {
-    for (int i = 0; i < channels; ++i) {
+    for (int i = 0; i < channels; i++) {
         kernels[i].rot();
-        for (int k = 0; k < nextLayer->getChannels(); ++k) {
-            deltas[i] = deltas[i] + kernels[i]*deltas[i];
-        }
+
+        //TODO solucionar sigabort de nextLayer->getDeltas()[i]
+        Matrix aux = kernels[i]*(nextLayer->getDeltas(i));
+        aux.applyTransfereDerivative();
+        deltas[i] = deltas[i] + aux;
+
         kernels[i].rot();
     }
+}
+
+void ConvolutionalLayer::applyPropagationChanges(Matrix *input, int quantity) {
+    updateWeights(input,quantity);
 }
 
 

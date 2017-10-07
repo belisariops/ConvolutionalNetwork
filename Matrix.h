@@ -24,6 +24,7 @@ public:
     void rot();
     virtual ~Matrix();
     void setRandomValues(int min, int max);
+    void applyTransfereDerivative();
 
 private:
     int h,w;

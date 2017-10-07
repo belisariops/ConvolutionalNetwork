@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <cmath>
 #include "Matrix.h"
 #include "RandomGenerator.h"
 
@@ -10,6 +11,8 @@ Matrix::Matrix(int h, int w) {
     this->values = new double*[h];
     for (int k = 0; k < h; k++) {
         this->values[k] = new double[w];
+        for (int j = 0; j < w; j++)
+            values[k][j] = 0;
     }
 
     this->rotated = false;
@@ -20,8 +23,6 @@ Matrix::Matrix(int h, int w) {
 }
 
 Matrix::Matrix(const Matrix &other)   {
-    std::cout << "Copy constructor" << std::endl;
-
     h = other.h;
     w = other.w;
     values = new double*[h];
@@ -123,7 +124,6 @@ Matrix Matrix::operator*(const Matrix &other) const {
 
 void Matrix::rot() {
     rotated = !rotated;
-    //std::cout << rotated<<std::endl;
 }
 
 void Matrix::setValues(int height, int width, double value) {
@@ -189,6 +189,18 @@ void Matrix::setRandomValues(int min, int max) {
         }
     }
 
+}
+
+double sigmoid(double x) {
+    return 1/(1 - exp(x));
+}
+
+void Matrix::applyTransfereDerivative() {
+    for (int height = 0; height < h; ++height) {
+        for(int width = 0; width < w; ++width) {
+            values[height][width] = sigmoid(values[height][width])*sigmoid(1 - values[height][width]);
+        }
+    }
 }
 
 

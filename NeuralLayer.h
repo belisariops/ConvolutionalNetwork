@@ -17,11 +17,13 @@ public:
     NeuralLayer *getNextLayer();
     void setPreviousLayer(NeuralLayer *layer);
     void setNextLayer(NeuralLayer *layer);
-    void connect(NeuralLayer *layer);
+    virtual void connect(NeuralLayer *layer);
     int getChannels();
     virtual void buildRandomLayer(int minValues,int maxValues) = 0;
     virtual void backPropagation() =  0;
     virtual void forwardPropagation(Matrix *input, int quantity) = 0;
+    virtual void applyPropagationChanges(Matrix *input, int quantity) = 0;
+    Matrix getDeltas(int index);
 
 protected:
     double transferDerivative(double output);
