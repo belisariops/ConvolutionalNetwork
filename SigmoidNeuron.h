@@ -8,7 +8,7 @@
 
 #include "Neuron.h"
 
-class SigmoidNeuron : Neuron {
+class SigmoidNeuron : public Neuron {
 public:
     SigmoidNeuron(double delta, double bias, double learningRate);
     void setWeights(std::vector<double> weights);
@@ -16,7 +16,7 @@ public:
     void setRandomWeights(int numberOfWeights,int minValue,int maxValue);
     double getOutput(double input[]);
 private:
-    std::vector<double> weights;
+
 };
 
 

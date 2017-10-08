@@ -13,6 +13,7 @@
 
 class NeuralLayer {
 public:
+    virtual ~NeuralLayer();
     NeuralLayer *getPreviousLayer();
     NeuralLayer *getNextLayer();
     void setPreviousLayer(NeuralLayer *layer);
@@ -30,6 +31,7 @@ protected:
     Matrix *outputFeatureMap;
     Matrix *kernels;
     Matrix *deltas;
+    Matrix *inputFeatureMap;
     int channels;
     int kernelHeight;
     int kernelWidth;

@@ -18,9 +18,12 @@ public:
     virtual void updateWeights(std::vector<double> inputs) = 0;
     void updateBias();
     virtual double getOutput(double input[])= 0;
+    double getWeight(int index);
+    double getDelta();
 
 
 protected:
+    std::vector<double> weights;
     double delta;
     double bias;
     double learningRate;

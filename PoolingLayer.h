@@ -8,8 +8,18 @@
 
 #include "NeuralLayer.h"
 
-class PoolingLayer : NeuralLayer {
+class PoolingLayer : public NeuralLayer {
+public:
+    PoolingLayer(int windowHeight,int windowWidth);
+    void buildRandomLayer(int minValues,int maxValues) override ;
+    void backPropagation() override ;
+    void forwardPropagation(Matrix *input, int quantity) override ;
+    void applyPropagationChanges(Matrix *input, int quantity) override ;
 
+private:
+    int windowHeight;
+    int windowWidth;
+    Matrix output;
 };
 
 

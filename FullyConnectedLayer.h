@@ -9,10 +9,17 @@
 #include "NeuralLayer.h"
 #include "SigmoidNeuron.h"
 
-class FullyConnectedLayer : NeuralLayer {
-
+class FullyConnectedLayer : public NeuralLayer {
+public:
+    FullyConnectedLayer(int numNeurons, double learningRate);
+    ~FullyConnectedLayer();
+    void buildRandomLayer(int minValues,int maxValues);
+    void backPropagation()  ;
+    void forwardPropagation(Matrix *input, int quantity);
+    void applyPropagationChanges(Matrix *input, int quantity);
 private:
     std::vector<SigmoidNeuron> neurons;
+    FullyConnectedLayer *nextLayer;
 };
 
 

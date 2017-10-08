@@ -26,3 +26,11 @@ void Neuron::updateBias() {
 
 }
 
+double Neuron::getWeight(int index) {
+    return weights[index];
+}
+
+double Neuron::getDelta() {
+    return delta;
+}
+

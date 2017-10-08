@@ -4,9 +4,7 @@
 
 #include <ctime>
 #include <cstdlib>
-#include <iostream>
 #include "ConvolutionalLayer.h"
-#include "RandomGenerator.h"
 
 ConvolutionalLayer::ConvolutionalLayer(int kernelHeight,int kernelWidth,int kernelQuantity,int inputHeight, int inputWidth) {
     this->kernelHeight = kernelHeight;
@@ -22,11 +20,13 @@ ConvolutionalLayer::ConvolutionalLayer(int kernelHeight,int kernelWidth,int kern
         outputFeatureMap[k] = Matrix(outputHeight,outputWidth);
         deltas[k] = Matrix(outputHeight,outputWidth);
     }
+    inputFeatureMap = (Matrix *)malloc(kernelQuantity * sizeof(Matrix));
 }
 
 ConvolutionalLayer::~ConvolutionalLayer() {
     free(kernels);
     free(outputFeatureMap);
+    free(inputFeatureMap);
 }
 
 void ConvolutionalLayer::buildRandomLayer(int minValues, int maxValues) {

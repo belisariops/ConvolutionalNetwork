@@ -38,6 +38,9 @@ Matrix NeuralLayer::getDeltas(int index) {
     return deltas[index];
 }
 
+NeuralLayer::~NeuralLayer() {
+}
+
 
 
 
