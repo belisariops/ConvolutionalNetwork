@@ -122,45 +122,45 @@ int main(int argc, char** argv) {
 //    }
 //    std::cout << image.size() << " " << image[0].size() << std::endl;
 
-    Matrix *m = new Matrix(2,2);
-    m->setValues(0,0,1);
-    m->setValues(0,1,2);
-    m->setValues(1,0,3);
-    m->setValues(1,1,4);
-    Matrix *x = new Matrix(4,4);
-    x->setValues(0,0,1);
-    x->setValues(0,1,2);
-    x->setValues(0,2,3);
-    x->setValues(0,3,4);
-    x->setValues(1,0,5);
-    x->setValues(1,1,6);
-    x->setValues(1,2,7);
-    x->setValues(1,3,8);
-    x->setValues(2,0,9);
-    x->setValues(2,1,10);
-    x->setValues(2,2,11);
-    x->setValues(2,3,12);
-    x->setValues(3,0,13);
-    x->setValues(3,1,14);
-    x->setValues(3,2,15);
-    x->setValues(3,3,16);
-    Matrix *b = new Matrix;
-
-
-    ConvolutionalLayer *a = new ConvolutionalLayer(1,1,1,4,4);
-    a->buildRandomLayer(0,1);
-    ConvolutionalLayer *asdf = new ConvolutionalLayer(1,1,1,4,4);
-    asdf->buildRandomLayer(0,1);
-    PoolingLayer *o = new PoolingLayer(2,2,1,4,4);
-    ReluLayer *r = new ReluLayer(1);
-    OutputLayer *out = new OutputLayer(2,2,1,2,0.05);
-    out->buildRandomLayer(-2,2);
-    r->connect(out);
-    o->connect(r);
-    asdf->connect(o);
-    a->connect(asdf);
-    Matrix *input[1] = {x};
-    a->forwardPropagation(input,1);
+//    Matrix *m = new Matrix(2,2);
+//    m->setValues(0,0,1);
+//    m->setValues(0,1,2);
+//    m->setValues(1,0,3);
+//    m->setValues(1,1,4);
+//    Matrix *x = new Matrix(4,4);
+//    x->setValues(0,0,1);
+//    x->setValues(0,1,2);
+//    x->setValues(0,2,3);
+//    x->setValues(0,3,4);
+//    x->setValues(1,0,5);
+//    x->setValues(1,1,6);
+//    x->setValues(1,2,7);
+//    x->setValues(1,3,8);
+//    x->setValues(2,0,9);
+//    x->setValues(2,1,10);
+//    x->setValues(2,2,11);
+//    x->setValues(2,3,12);
+//    x->setValues(3,0,13);
+//    x->setValues(3,1,14);
+//    x->setValues(3,2,15);
+//    x->setValues(3,3,16);
+//    Matrix *b = new Matrix;
+//
+//
+//    ConvolutionalLayer *a = new ConvolutionalLayer(1,1,1,4,4);
+//    a->buildRandomLayer(0,1);
+//    ConvolutionalLayer *asdf = new ConvolutionalLayer(1,1,1,4,4);
+//    asdf->buildRandomLayer(0,1);
+//    PoolingLayer *o = new PoolingLayer(2,2,1,4,4);
+//    ReluLayer *r = new ReluLayer(1);
+//    OutputLayer *out = new OutputLayer(2,2,1,2,0.05);
+//    out->buildRandomLayer(-2,2);
+//    r->connect(out);
+//    o->connect(r);
+//    asdf->connect(o);
+//    a->connect(asdf);
+//    Matrix *input[1] = {x};
+//    a->forwardPropagation(input,1);
 
 
     return 0;

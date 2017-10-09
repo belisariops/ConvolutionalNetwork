@@ -237,6 +237,8 @@ Matrix Matrix::operator^(const Matrix &other) const {
     Matrix temp(h,w);
     for (int i = 0; i < h; ++i) {
         for (int j = 0; j < w; ++j) {
+            double x = values[i][j];
+            double u = other.values[i][j];
             temp.values[i][j] = values[i][j] * other.values[i][j];
         }
     }

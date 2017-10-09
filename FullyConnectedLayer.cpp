@@ -13,19 +13,25 @@
 
 
 void FullyConnectedLayer::buildRandomLayer(int minValues, int maxValues) {
+    RandomGenerator generator = RandomGenerator((unsigned int)time(0));
    //TODO no funciona
-    for (int i = 0; i < numNeurons; ++i) {
-        std::cout << "::::::::::" << std::endl;
-        for (int j = 0; j < kernels[i]->getHeight(); ++j) {
-            std::cout << kernels[i]->getValues(j,1)<<std::endl;
+//    for (int i = 0; i < numNeurons; ++i) {
+//        std::cout << "::::::::::" << std::endl;
+//        for (int j = 0; j < kernels[i]->getHeight(); ++j) {
+//            std::cout << kernels[i]->getValues(j,1)<<std::endl;
+//        }
+//        std::cout << std::endl;
+//        kernels[i]->setRandomValues(minValues, maxValues);
+//        for (int j = 0; j < kernels[i]->getHeight(); ++j) {
+//            std::cout << kernels[i]->getValues(j,1)<<std::endl;
+//        }
+//    }
+    for (int n = 0; n < numNeurons; ++n) {
+        for (int h = 0; h < kernels[n]->getHeight(); ++h) {
+            kernels[n]->setValues(h,1,generator.randomBetween(minValues,maxValues));
         }
-        std::cout << std::endl;
-        kernels[i]->setRandomValues(minValues, maxValues);
-        for (int j = 0; j < kernels[i]->getHeight(); ++j) {
-            std::cout << kernels[i]->getValues(j,1)<<std::endl;
-        }
+        bias->setValues(n,1,generator.randomBetween(-3,3));
     }
-    bias->setRandomValues(-3,3);
 
 
 }
@@ -51,8 +57,11 @@ void FullyConnectedLayer::forwardPropagation(Matrix **input, int quantity) {
     double z;
     /*Se dara de output un vector (matriz de nx1)*/
     for (int n = 0; n < numNeurons; ++n) {
-        Matrix neuronVector = inputVector^(*kernels[n]);
-        z = neuronVector.sumValues() + bias->getValues(n,1);
+        z=0;
+        for (int h = 0; h < inputVector.getHeight(); ++h) {
+            z += inputVector.getValues(h,1)*kernels[n]->getValues(n,1);
+        }
+        z += bias->getValues(n,1);
         outputFeatureMap[0]->setValues(n,1,sigmoid(z));
     }
 

@@ -25,20 +25,14 @@ void OutputLayer::forwardPropagation(Matrix **input, int quantity) {
     double z;
     /*Se dara de output un vector (matriz de nx1)*/
     for (int n = 0; n < numNeurons; ++n) {
-        Matrix neuronVector = inputVector^(*kernels[n]);
-        z = neuronVector.sumValues() + bias->getValues(n,1);
+        z=0;
+        for (int h = 0; h < inputVector.getHeight(); ++h) {
+            z += inputVector.getValues(h,1)*kernels[n]->getValues(n,1);
+        }
+        z += bias->getValues(n,1);
         outputFeatureMap[0]->setValues(n,1,sigmoid(z));
     }
 
-    for (int j = 0; j < outputFeatureMap[0]->getHeight(); ++j) {
-        for (int i = 0; i < outputFeatureMap[0]->getWidth(); ++i) {
-            std::cout << outputFeatureMap[0]->getValues(j,i) << " ";
-        }
-        std::cout << std::endl;
-
-    }
-    std::cout << std::endl;
-    std::cout << std::endl;
 }
 
 
