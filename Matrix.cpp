@@ -187,10 +187,7 @@ void Matrix::setRandomValues(int min, int max) {
     for (int height = 0; height < h; ++height) {
         for (int width = 0; width < w; ++width) {
             double x = generator.randomBetween(min,max);
-            std::cout<<x <<std::endl;
-            x = generator.randomBetween(min,max);
-            std::cout<<x <<std::endl;
-            values[height][width] = x;
+            this->values[height][width] = x;
         }
     }
 
@@ -206,6 +203,44 @@ void Matrix::applyTransfereDerivative() {
             values[height][width] = sigmoid(values[height][width])*sigmoid(1 - values[height][width]);
         }
     }
+}
+
+double Matrix::sumValues() {
+    double sum = 0;
+    for (int i = 0; i < h; ++i) {
+        for (int j = 0; j < w; ++j) {
+            sum +=values[i][j];
+        }
+    }
+    return sum;
+}
+
+double **Matrix::getMatrixValues() {
+    return values;
+}
+
+Matrix Matrix::operator-(const Matrix &other) const {
+    if (h != other.h && w != other.w)
+        return Matrix();
+    Matrix temp(h,w);
+    for (int i = 0; i < h; ++i) {
+        for (int j = 0; j < w; ++j) {
+            temp.values[i][j] = values[i][j] - other.values[i][j];
+        }
+    }
+    return temp;
+}
+
+Matrix Matrix::operator^(const Matrix &other) const {
+    if (h != other.h && w != other.w)
+        return Matrix();
+    Matrix temp(h,w);
+    for (int i = 0; i < h; ++i) {
+        for (int j = 0; j < w; ++j) {
+            temp.values[i][j] = values[i][j] * other.values[i][j];
+        }
+    }
+    return temp;
 }
 
 

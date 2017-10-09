@@ -40,7 +40,7 @@ void ReluLayer::forwardPropagation(Matrix **input, int quantity) {
     }
     std::cout << std::endl;
     std::cout << std::endl;
-    //nextLayer->forwardPropagation(input,quantity);
+    nextLayer->forwardPropagation(input,quantity);
 }
 
 /*A Relu layer does not update it values*/

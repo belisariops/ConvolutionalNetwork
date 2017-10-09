@@ -66,6 +66,8 @@ NeuralLayer::NeuralLayer(int kernelHeight, int kernelWidth, int kernelQuantity, 
     inputFeatureMap = new Matrix*[kernelQuantity];
 }
 
+NeuralLayer::NeuralLayer() {}
+
 
 
 

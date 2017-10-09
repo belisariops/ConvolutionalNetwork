@@ -14,6 +14,9 @@
 class NeuralLayer {
 public:
     NeuralLayer(int kernelHeight,int kernelWidth,int kernelQuantity,int inputHeight, int inputWidth);
+
+    NeuralLayer();
+
     virtual ~NeuralLayer();
     NeuralLayer *getPreviousLayer();
     NeuralLayer *getNextLayer();

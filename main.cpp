@@ -4,6 +4,7 @@
 #include "ConvolutionalLayer.h"
 #include "PoolingLayer.h"
 #include "ReluLayer.h"
+#include "OutputLayer.h"
 
 //std::vector<std::vector<int>> tifImagetoMatrix(std::string imageName) {
 //
@@ -152,6 +153,9 @@ int main(int argc, char** argv) {
     asdf->buildRandomLayer(0,1);
     PoolingLayer *o = new PoolingLayer(2,2,1,4,4);
     ReluLayer *r = new ReluLayer(1);
+    OutputLayer *out = new OutputLayer(2,2,1,2,0.05);
+    out->buildRandomLayer(-2,2);
+    r->connect(out);
     o->connect(r);
     asdf->connect(o);
     a->connect(asdf);
