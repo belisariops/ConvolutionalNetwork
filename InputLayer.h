@@ -9,7 +9,7 @@
 #include "NeuralLayer.h"
 #include "Filter.h"
 
-class InputLayer : NeuralLayer{
+class InputLayer {
 public:
     InputLayer(int width,int height, int channels);
 private:

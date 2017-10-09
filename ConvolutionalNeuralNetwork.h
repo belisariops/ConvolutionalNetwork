@@ -6,8 +6,15 @@
 #define CONVOLUTIONALNETWORK_CONVOLUTIONALNEURALNETWORK_H
 
 
-class ConvolutionalNeuralNetwork {
+#include "InputLayer.h"
+#include "OutputLayer.h"
 
+class ConvolutionalNeuralNetwork {
+    ConvolutionalNeuralNetwork(int numConvolutionalLayers,int numPoolingLayer,int numFullyConnectedLayers,int numOutputClasses);
+
+private:
+    InputLayer *firstLayer;
+    OutputLayer *lastLayer;
 };
 
 
