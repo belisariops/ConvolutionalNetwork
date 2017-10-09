@@ -14,10 +14,10 @@ public:
     ~ConvolutionalLayer();
     void buildRandomLayer(int minValues, int maxValues) override;
     void backPropagation() override;
-    void forwardPropagation(Matrix *input, int quantity) override;
-    void updateWeights(Matrix *input, int quantity);
+    void forwardPropagation(Matrix **input, int quantity) override;
+    void updateWeights(Matrix **input, int quantity);
     void updateDeltas();
-    void applyPropagationChanges(Matrix *input, int quantity) override;
+    void applyPropagationChanges(Matrix **input, int quantity) override;
 private:
 };
 

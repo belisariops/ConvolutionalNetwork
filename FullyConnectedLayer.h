@@ -11,15 +11,16 @@
 
 class FullyConnectedLayer : public NeuralLayer {
 public:
-    FullyConnectedLayer(int numNeurons, double learningRate);
+    FullyConnectedLayer(int height, int width, double learningRate);
     ~FullyConnectedLayer();
-    void buildRandomLayer(int minValues,int maxValues);
-    void backPropagation()  ;
-    void forwardPropagation(Matrix *input, int quantity);
-    void applyPropagationChanges(Matrix *input, int quantity);
+    void buildRandomLayer(int minValues,int maxValues) override ;
+    void backPropagation() override ;
+    void forwardPropagation(Matrix **input, int quantity) override ;
+    void applyPropagationChanges(Matrix **input, int quantity) override ;
 private:
     std::vector<SigmoidNeuron> neurons;
     FullyConnectedLayer *nextLayer;
+    int numNeurons;
 };
 
 

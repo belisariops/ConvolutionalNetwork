@@ -23,7 +23,7 @@ void NeuralLayer::setNextLayer(NeuralLayer *layer) {
 
 void NeuralLayer::connect(NeuralLayer *layer) {
     this->nextLayer = layer;
-    layer->setNextLayer(this);
+    layer->setPreviousLayer(this);
 }
 
 double NeuralLayer::transferDerivative(double output) {
@@ -34,11 +34,36 @@ int NeuralLayer::getChannels() {
     return channels;
 }
 
-Matrix NeuralLayer::getDeltas(int index) {
+Matrix *NeuralLayer::getDeltas(int index) {
     return deltas[index];
 }
 
 NeuralLayer::~NeuralLayer() {
+    for(int i=0; i < channels; ++i) {
+        delete[] this->kernels[i];
+        delete[] this->outputFeatureMap[i];
+        delete[] this->deltas[i];
+    }
+    delete[] this->kernels;
+    delete[] this->outputFeatureMap;
+    delete[] this->deltas;
+}
+
+NeuralLayer::NeuralLayer(int kernelHeight, int kernelWidth, int kernelQuantity, int inputHeight, int inputWidth) {
+    this->kernelHeight = kernelHeight;
+    this->kernelWidth = kernelWidth;
+    channels = kernelQuantity;
+    kernels = new Matrix*[kernelQuantity];
+    deltas = new Matrix*[kernelQuantity];
+    outputFeatureMap = new Matrix*[kernelQuantity];
+    int outputHeight = inputHeight - kernelHeight +1;
+    int outputWidth = inputWidth - kernelWidth +1;
+    for (int k = 0; k < kernelQuantity; ++k) {
+        kernels[k] = new Matrix(kernelHeight,kernelWidth);
+        outputFeatureMap[k] = new Matrix(outputHeight,outputWidth);
+        deltas[k] = new Matrix(outputHeight,outputWidth);
+    }
+    inputFeatureMap = new Matrix*[kernelQuantity];
 }
 
 

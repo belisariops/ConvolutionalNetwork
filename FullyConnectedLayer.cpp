@@ -12,34 +12,38 @@ void FullyConnectedLayer::buildRandomLayer(int minValues, int maxValues) {
 }
 
 void FullyConnectedLayer::backPropagation() {
-    double error = 0;
-    for (SigmoidNeuron neuron : neurons) {
-        //TODO por cada clase o neurona de la siguiente capa
-        int index = 0;
-        for (SigmoidNeuron nextLayerNeuron : nextLayer->neurons) {
-            error += nextLayerNeuron.getWeight(index)*nextLayerNeuron.getDelta();
-            index++;
-        }
-        neuron.setDelta(error * transferDerivative(neuron.getOutput()))
-    }
+//    double error = 0;
+//    for (SigmoidNeuron neuron : neurons) {
+//        //TODO por cada clase o neurona de la siguiente capa
+//        int index = 0;
+//        for (SigmoidNeuron nextLayerNeuron : nextLayer->neurons) {
+//            error += nextLayerNeuron.getWeight(index)*nextLayerNeuron.getDelta();
+//            index++;
+//        }
+//        neuron.setDelta(error * transferDerivative(neuron.getOutput()))
+//    }
 
 }
 
-void FullyConnectedLayer::forwardPropagation(Matrix *input, int quantity) {
+void FullyConnectedLayer::forwardPropagation(Matrix **input, int quantity) {
 
 }
 
-void FullyConnectedLayer::applyPropagationChanges(Matrix *input, int quantity) {
+void FullyConnectedLayer::applyPropagationChanges(Matrix **input, int quantity) {
 
 }
 
-FullyConnectedLayer::FullyConnectedLayer(int numNeurons, double learningRate) {
-    RandomGenerator generator = RandomGenerator(time(0));
-    for (int i = 0; i < numNeurons; ++i) {
-        SigmoidNeuron neuron = SigmoidNeuron(0,generator.randomBetween(-2,2),learningRate);
-        neuron.setRandomWeights(numNeurons,-1,1);
-        neurons.push_back(neuron);
-    }
+FullyConnectedLayer::FullyConnectedLayer(int inputHeight,int inputWidth, double learningRate) : NeuralLayer(inputHeight,inputWidth,inputHeight*inputWidth,inputHeight,inputWidth) {
+//    this->numNeurons = width * height;
+//    kernels = (Matrix *)malloc(numNeurons * sizeof(Matrix));
+//    deltas = (Matrix *)malloc(numNeurons * sizeof(Matrix));
+//    outputFeatureMap = new Matrix(numNeurons,1);
+//    for (int k = 0; k < numNeurons; ++k) {
+//        kernels[k] = Matrix(height,width);
+//        outputFeatureMap[k] = Matrix(,outputWidth);
+//        deltas[k] = Matrix(outputHeight,outputWidth);
+//    }
+//    inputFeatureMap = (Matrix *)malloc(kernelQuantity * sizeof(Matrix));
 }
 
 FullyConnectedLayer::~FullyConnectedLayer() {

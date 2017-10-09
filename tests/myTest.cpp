@@ -57,6 +57,22 @@ TEST_CASE( "Matrix sum", "[MatrixSum]" ) {
     REQUIRE( matrixC.getValues(2,2) == 18 );
 }
 
+
+TEST_CASE( "Matrix cumulative addition", "[MatrixCumulativeAdd]" ) {
+    setUp();
+    matrixA +=matrixA;
+    REQUIRE( matrixA.getValues(0,0) == 2 );
+    REQUIRE( matrixA.getValues(0,1) == 4 );
+    REQUIRE( matrixA.getValues(0,2) == 6 );
+    REQUIRE( matrixA.getValues(1,0) == 8 );
+    REQUIRE( matrixA.getValues(1,1) == 10 );
+    REQUIRE( matrixA.getValues(1,2) == 12 );
+    REQUIRE( matrixA.getValues(2,0) == 14 );
+    REQUIRE( matrixA.getValues(2,1) == 16 );
+    REQUIRE( matrixA.getValues(2,2) == 18 );
+}
+
+
 TEST_CASE( "Matrix correlation", "[MatrixCorrelation]" ) {
     setUp();
     /*First a correlation is test*/

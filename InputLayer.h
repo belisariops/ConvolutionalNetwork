@@ -11,17 +11,8 @@
 
 class InputLayer : NeuralLayer{
 public:
-    InputLayer(int width,int height);
-    double *getOutput(std::vector<double> input);
-    int getWidth();
-    int getHeight();
-    void getOutput();
-    void buildRandomLayer();
-    void backPropagation();
+    InputLayer(int width,int height, int channels);
 private:
-    NeuralLayer *nextLayer;
-    int height;
-    int width;
 };
 
 

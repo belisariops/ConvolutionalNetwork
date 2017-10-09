@@ -13,6 +13,7 @@
 
 class NeuralLayer {
 public:
+    NeuralLayer(int kernelHeight,int kernelWidth,int kernelQuantity,int inputHeight, int inputWidth);
     virtual ~NeuralLayer();
     NeuralLayer *getPreviousLayer();
     NeuralLayer *getNextLayer();
@@ -22,16 +23,16 @@ public:
     int getChannels();
     virtual void buildRandomLayer(int minValues,int maxValues) = 0;
     virtual void backPropagation() =  0;
-    virtual void forwardPropagation(Matrix *input, int quantity) = 0;
-    virtual void applyPropagationChanges(Matrix *input, int quantity) = 0;
-    Matrix getDeltas(int index);
+    virtual void forwardPropagation(Matrix **input, int quantity) = 0;
+    virtual void applyPropagationChanges(Matrix **input, int quantity) = 0;
+    Matrix *getDeltas(int index);
 
 protected:
     double transferDerivative(double output);
-    Matrix *outputFeatureMap;
-    Matrix *kernels;
-    Matrix *deltas;
-    Matrix *inputFeatureMap;
+    Matrix **outputFeatureMap;
+    Matrix **kernels;
+    Matrix **deltas;
+    Matrix **inputFeatureMap;
     int channels;
     int kernelHeight;
     int kernelWidth;

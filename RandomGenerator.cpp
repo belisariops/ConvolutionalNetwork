@@ -4,6 +4,10 @@
 
 #include "RandomGenerator.h"
 #include <cmath>
+#include <cstdlib>
+#include <ctime>
+#include <chrono>
+
 const double PI = 4.0 * atan(1.0);
 
 RandomGenerator::~RandomGenerator() {
@@ -19,7 +23,9 @@ int RandomGenerator::nextInt() {
 }
 
 double RandomGenerator::randomBetween(int lowerBound,int upperBound) {
-    return (double)lowerBound + (double)(upperBound - lowerBound)*nextReal();
+//    return (double)lowerBound + (double)(upperBound - lowerBound)*nextReal();
+    double f = (double)rand() / RAND_MAX;
+    return lowerBound + f * (upperBound - lowerBound);
 }
 
 double RandomGenerator::nextReal() {
@@ -38,6 +44,7 @@ RandomGenerator::RandomGenerator(const unsigned int initial_seed) :
     for (int i = 1; i <= 4; i++) {
         seed[i - 1] = s = 1812433253U * (s ^ (s >> 30)) + i;
     }
+    srand((unsigned int)time(0));
 }
 
 

@@ -13,8 +13,8 @@ public:
     ReluLayer(int channels);
     void buildRandomLayer(int minValues,int maxValues) override ;
     void backPropagation() override ;
-    void forwardPropagation(Matrix *input, int quantity) override ;
-    void applyPropagationChanges(Matrix *input, int quantity) override ;
+    void forwardPropagation(Matrix **input, int quantity) override ;
+    void applyPropagationChanges(Matrix **input, int quantity) override ;
 };
 
 

@@ -28,11 +28,11 @@ Matrix::Matrix(const Matrix &other)   {
     values = new double*[h];
     for (int height = 0; height < h; ++height) {
         values[height] = new double[w];
-        for (int width = 0; width < w; width++) {
+        for (int width = 0; width < w; ++width) {
             values[height][width] = other.values[height][width];
         }
     }
-
+//    values = other.values;
     rotated = other.rotated;
 
 }
@@ -41,7 +41,7 @@ Matrix::~Matrix() {
     for(int i=0; i < this->h; ++i) {
         delete[] this->values[i];
     }
-    delete[] this->values;
+   delete[] this->values;
 }
 
 Matrix::Matrix() {
@@ -136,8 +136,8 @@ double Matrix::getValues(int height, int width) {
 
 Matrix &Matrix::operator=(const Matrix& other) {
     if (&other != this) {
-        this->h = other.h;
-        this->w = other.w;
+        this->h = other.getHeight();
+        this->w = other.getWidth();
         values = new double *[h];
         for (int height = 0; height < h; height++) {
             values[height] = new double[w];
@@ -172,20 +172,25 @@ Matrix Matrix::operator+=(const Matrix &other) const {
     if (h != other.h && w != other.w) {
         return Matrix();
     }
-    Matrix temp(h,w);
+
     for (int i = 0; i < h; ++i) {
         for (int j = 0; j < w; ++j) {
-            temp.values[i][j] += values[i][j] + other.values[i][j];
+            values[i][j] += other.values[i][j];
         }
     }
-    return temp;
+    return *this;
+
 }
 
 void Matrix::setRandomValues(int min, int max) {
     RandomGenerator generator = RandomGenerator((unsigned int)time(0));
-    for (int height = 0; height < h; ++h) {
+    for (int height = 0; height < h; ++height) {
         for (int width = 0; width < w; ++width) {
-            values[h][w] = generator.randomBetween(min,max);
+            double x = generator.randomBetween(min,max);
+            std::cout<<x <<std::endl;
+            x = generator.randomBetween(min,max);
+            std::cout<<x <<std::endl;
+            values[height][width] = x;
         }
     }
 
